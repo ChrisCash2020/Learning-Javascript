@@ -37,10 +37,10 @@ num3 += num1;
 console.log(num3);
 
 //string operators
-var age = 29;
-var info = "My name is Chris, I am " + age + " years old " + 10;
+// var age = 29;
+// var info = "My name is Chris, I am " + age + " years old " + 10;
 
-console.log(info);
+// console.log(info);
 
  //string operators in conjunction with numbrs used to give it space
 var num4 = 14 % 3 ;
@@ -68,7 +68,8 @@ if (x == 10 || y < 20) this means one of those if conditions needs to be true in
 
 if (x == 10 && y < 20) this means that both of those if conditions neds to to be true inorder for the code to run/show */
 
-//are like a secondary condition in conjunction with your first conditions (the if() condition) that have seperate or equal statements
+
+// Else if are like a secondary condition in conjunction with your first conditions (the if() condition) that have seperate or equal statements
 
 // else if (anotherCondition)
 // {
@@ -111,7 +112,7 @@ are containers that can contain more than one value at a time under the same var
     */
 
     
-//to display the whole array:
+//to display the whole array just type index of and the variable name :
     /*var item = ["4", 4, 3];
     console.log(item)*/
 
@@ -119,6 +120,10 @@ are containers that can contain more than one value at a time under the same var
 //to display one value from the array, [0] displays the first value bc arrays are ordered in a 0-1 index 
     /*var item = [4,true, "wow"]
     console.log(item[0])*/
+
+
+//methods from here on a destructive values so they do effect the original array. 
+
 
 
 //to add a value to the end of the array
@@ -159,19 +164,23 @@ are containers that can contain more than one value at a time under the same var
 // to add and remove data simultaneously in an array 
 
     /*var fruits = ["apples", "oranges", "pears"];
-    fruits.splice(2, 0, "Lemon", "Kiwi");
-    console.log(fruits)/*
+    fruits.splice(1, 1, "Lemon", "sam" , "jake", "kobe");
+console.log(fruits)
+    console.log(fruits[1])*/
 
-/* In a splice method the first parameter/number defines where the element should be 
+/* In a splice method the first parameter/number defines WHERE (not how many) the element should be 
 added and the second defines how many should be taken out, *IF any of the previous 
 values remain they will be shifted to a positon after the added element(s) and there 
 index number will change.*/
 /*when deciding what place to splice be aware that what ever you are going to add is 
-going to be placed before that positon For EX: if you put the idex of 2 the splice 
-element will show up where index 1 normally is.
-Then the what you decided to remove is going to remove the specified amount from the
-begining of the added values *IF you didn't add any values it will just start removing
+going to be placed based on the index format previously established For EX: if you put the idex of 2 the splice 
+element will show up  at the based on the index format of 0, 1, 2 ,3 , 4 and that means all the items will write out will be placed there.
+Then what you decided to remove is just going to remove the specified amount from the
+that inex value *IF you didn't add any values it will just start removing
 elements starting with the value in index 0 and onwards*/
+
+
+//slice a diffrent method seperate from splice that is used to crete new arrays from pieced up parts of a different array, and the other array is uneffected
 
 
 //to create a new array from a specific position from a previous array
@@ -181,8 +190,9 @@ elements starting with the value in index 0 and onwards*/
     var citrus = fruits.slice(1);
     console.log(citrus);*/
 
-//creats a new array with different name but similar data that starts at specifc value position
-//Make a spice doesn't remove any values fromt he previous array. *Old array is uneffectd
+//creats a new array with different name but similar data that starts at specifc value position, if no end position is stated it just takes up the rest of the data
+// This spice doesn't remove any values from the previous array also Old array is uneffectd
+
 
 
 // two arguments in a slice array method 
@@ -191,10 +201,8 @@ elements starting with the value in index 0 and onwards*/
     var citrus = fruits.slice(1, 4)
     console.log(citrus)*/
 
-/* the first parameter in a slice is the starting positon and is included in the values shown in the new array and the second parameter in a slice is the ending position and is 
-not included in the new array, just the values before it no exceptions.
-So in this variable citrus the output will be  "Orange", "Lemon", "Apple", 
-Thats wordy so just know that the first number is the index included in the array up to the second number ie: (1, 4) is 1, 2, 3 *will give you no value if both numbers are equal */
+/* just know that the first number is the index included in the array up to the second number ie: (1, 4) is 1, 2, 3 *will give you no value if both numbers are equal 
+You could also think of the second number to negate the inex rule and start counting from 1 instead of 0 and ending based on that */
 
 
 
@@ -258,6 +266,28 @@ ex: replace("o", "Juice"));  this condition outputs BJuicettle of water */
 
 
 
+
+/*They are several types of Functions this one is a named function
+First you type out the function keyword obviously then you name your function and place () after them *This is where your placeholders will be 
+Next you add a curly bracket afterwards to end the function, The curly braces on function is a block 
+     /*function testExample() {
+    var greeting = "Hi! My name is Chris";
+    console.log(greeting);
+    }
+    testExample();*/
+
+//The reason to make a function is to run specificed code that doesn't run insided a website until called upon 
+//this calls on the function now 
+
+
+/*Functions can be console log differently usiing return values */
+
+    /*Function testExample () {
+        var greeting = "Hi! My name is Chris";
+        retrun greeting;
+
+    }
+    console.log(testExample())*/
 
 
 
