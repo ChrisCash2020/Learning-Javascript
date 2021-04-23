@@ -342,13 +342,14 @@ console.log(resultTwo);
 // people.forEach(logPerson);
 //In the end callback functions are just functions that you can place inside another function
 
-const ul = document.querySelector(".people");
-const people = ["Mario", "Luigi", "Ryu", "Shaun", "Chun-li"];
+// const ul = document.querySelector(".people");
+// const people = ["Mario", "Luigi", "Ryu", "Shaun", "Chun-li"];
 
-let html = ``;
+// let html = ``;
 
-people.forEach((person) => {
-  html += `<li>${person}</li>`;
-});
-console.log(html);
-ul.innerHTML = html;
+// people.forEach((person) => {
+//   html += `<li>${person}</li>`;
+// });
+// console.log(html);
+// ul.innerHTML = html;
+
