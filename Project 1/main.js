@@ -65,7 +65,7 @@ const updateScore = () => {
   if (pScore === 5) {
     return youWon();
   } else if (cScore === 5) {
-    return youWon();
+    return youLost();
   }
 };
 
