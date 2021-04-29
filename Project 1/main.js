@@ -1,5 +1,3 @@
-// const hide = document.querySelector('#hide');
-// const fade = document.querySelector('.weapon, .container');
 const text = document.querySelector('.fancy');
 const stringText = text.textContent;
 const splitText = stringText.split('');
@@ -23,8 +21,10 @@ function complete() {
   const fade = document.querySelector('.fadetwo');
   clearInterval(timer);
   timer = null;
-  hide.style.position = 'absolute';
-  hide.style.left = '-9999px';
+  hide.style.transform = 'scale(0)';
+  hide.style.transition = 'transform ease-out 50ms';
+  hide.style.opacity = '0';
+  hide.style.height = '0';
   fade.style.opacity = '1';
 }
 
@@ -32,7 +32,7 @@ let userChosen;
 let computerChosen;
 let pScore = 0;
 let cScore = 0;
-var result = results();
+// var result = results();
 const displayResult = document.getElementById('result');
 // const randomNumber = Math.floor(Math.random() * 3);
 const possibleChoices = document.querySelectorAll('.choices');
@@ -65,11 +65,11 @@ const updateScore = () => {
   if (pScore === 5) {
     return youWon();
   } else if (cScore === 5) {
-    return youLost();
+    return youWon();
   }
 };
 
-function results() {
+let results = () => {
   if (userChosen === 'rock' && computerChosen === 'paper') {
     result = 'You Lost';
     cScore++;
@@ -110,8 +110,8 @@ function results() {
     updateScore();
     return;
   }
-}
-
+};
+var result = results();
 function youWon() {
   const bg = document.querySelector('body');
   const fadetwo = document.querySelector('.fadetwo');
@@ -123,9 +123,10 @@ function youWon() {
   heading.innerHTML = 'Congrats';
   heading.style.textShadow = '3px 3px 1px #949494';
   bg.style.animation = 'none';
-  hidetwo.style.position = 'static';
+  hidetwo.style.height = '55vh';
+  hidetwo.style.minHeight = '400px';
+  hidetwo.style.transform = 'scale(1)';
   h.style.boxShadow = 'inset 0px 20px 60px gold';
-  // bg.style.backgroundImage = "url('./Robo-img1/hope.gif')";
 }
 var mySong = document.getElementById('mySong');
 var icon = document.getElementById('icon');
@@ -146,7 +147,7 @@ function youLost() {
   const heading = document.querySelector('.heading');
   const h = document.querySelector('html');
   const blood = document.querySelector('.blood');
-  const song = document.querySelector('.play-audio');
+  const song = document.querySelector('#icon');
   fadetwo.style.position = 'absolute';
   fadetwo.style.left = '-9999px';
   heading.style.position = 'absolute';
@@ -154,6 +155,5 @@ function youLost() {
   bg.style.animation = 'none';
   h.style.boxShadow = 'inset 0px 20px 60px #fc0000';
   blood.innerHTML = 'You Died';
-  song.style.position = 'absolute';
-  song.style.left = '-9999px';
+  song.style.boxShadow = 'inset 0px 0px 60px #ff0000';
 }
