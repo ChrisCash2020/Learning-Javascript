@@ -117,28 +117,16 @@ function youWon() {
   const fadetwo = document.querySelector('.fadetwo');
   const heading = document.querySelector('.heading');
   const hidetwo = document.querySelector('.hidetwo');
+  const h = document.querySelector('html');
   fadetwo.style.position = 'absolute';
   fadetwo.style.left = '-9999px';
-  heading.innerHTML = 'Congratulations';
+  heading.innerHTML = 'Congrats';
+  heading.style.textShadow = '3px 3px 1px #949494';
   bg.style.animation = 'none';
   hidetwo.style.position = 'static';
+  h.style.boxShadow = 'inset 0px 20px 60px gold';
   // bg.style.backgroundImage = "url('./Robo-img1/hope.gif')";
 }
-function youLost() {
-  const bg = document.querySelector('body');
-  const fadetwo = document.querySelector('.fadetwo');
-  const heading = document.querySelector('.heading');
-  const h = document.querySelector('html');
-  const blood = document.querySelector('.blood');
-  fadetwo.style.position = 'absolute';
-  fadetwo.style.left = '-9999px';
-  heading.style.position = 'absolute';
-  heading.style.left = '-9999px';
-  bg.style.animation = 'none';
-  h.style.boxShadow = 'inset 0px 20px 60px #fc0000';
-  blood.innerHTML = 'You Died';
-}
-
 var mySong = document.getElementById('mySong');
 var icon = document.getElementById('icon');
 
@@ -151,3 +139,21 @@ icon.onclick = function () {
     icon.src = './Robo-img1/play.png';
   }
 };
+
+function youLost() {
+  const bg = document.querySelector('body');
+  const fadetwo = document.querySelector('.fadetwo');
+  const heading = document.querySelector('.heading');
+  const h = document.querySelector('html');
+  const blood = document.querySelector('.blood');
+  const song = document.querySelector('.play-audio');
+  fadetwo.style.position = 'absolute';
+  fadetwo.style.left = '-9999px';
+  heading.style.position = 'absolute';
+  heading.style.left = '-9999px';
+  bg.style.animation = 'none';
+  h.style.boxShadow = 'inset 0px 20px 60px #fc0000';
+  blood.innerHTML = 'You Died';
+  song.style.position = 'absolute';
+  song.style.left = '-9999px';
+}

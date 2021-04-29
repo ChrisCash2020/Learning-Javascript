@@ -68,7 +68,7 @@ span {
 iframe {
   width: 50vw;
   min-width: 200px;
-  height: 70vh;
+  height: 55vh;
   min-height: 400px;
 }
 a {
@@ -185,7 +185,7 @@ a {
     display: flex;
     flex-direction: column;
     align-content: stretch;
-    min-width: 360px;
+    min-width: 415px;
   }
   .heading,
   .blood {
