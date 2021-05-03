@@ -514,4 +514,187 @@ let lifterResults = (array) => {
   return myMsg;
 };
 
-console.log(lifterResults(allLifters));
+console.log(lifterResults(malelifters));
+
+//Introduction into objects
+
+const item1 = {
+  item: 'Butter',
+  price: 3,
+  stock: 500,
+  onOrder: true,
+};
+const item2 = {
+  item: 'Butter',
+  price: 3,
+  stock: 500,
+  onOrder: true,
+};
+const item3 = {
+  item: 'Butter',
+  price: 3,
+  stock: 500,
+  onOrder: true,
+};
+const item4 = {
+  item: 'Butter',
+  price: [3, 4, 5, 5],
+  stock: 500,
+  onOrder: true,
+  'my Favorite Foods': ['lasagna', 'Pizza', 'Tacos'],
+};
+
+const storeInventory = [item1, item2, item3, item4];
+
+function Student(first, last, lvl, scores) {
+  this.firstName = first;
+  this.lastName = last;
+  this.classLevel = lvl;
+  this.scores = scores;
+  this.getFullName = function () {
+    return `${this.firstName} ${this.lastName}`;
+  };
+  this.getMyGrade = function () {
+    let mySum = 0;
+    for (i = 0; i < this.scores.length; i++) {
+      mySum += this.scores[i];
+    }
+    return mySum / this.scores.length;
+  };
+}
+const student1 = new Student('Mary', 'Adams', 'Junior', 'A');
+student1;
+const student2 = new Student('Chris', 'Olowokere', 'Senior', [50, 90, 80, 85]);
+student2.firstName = 'David';
+student2;
+
+console.log(student2.getMyGrade());
+
+// let allStudents1 = {student1, student2};
+// allStudents1;
+
+//codingChallenge 7
+
+function Receipt(first, last, subtotal, tax, service) {
+  this.firstName = first;
+  this.lastName = last;
+  this.subTotal = subtotal;
+  this.taxRate = tax;
+  this.serviceLevel = service;
+  this.getFullName = function () {
+    return `${this.firstName} ${this.lastName}`;
+  };
+  this.getTip = function () {
+    return this.subTotal * (this.serviceLevel == 'excellent' ? 0.25 : 0.18);
+  };
+  this.getTax = function () {
+    return this.taxRate * this.subTotal;
+  };
+  this.getTotalBill = function () {
+    return `Bill for: ${this.getFullName()} \nSubtotal: $${
+      this.subTotal
+    } \nTax: $${this.getTax()} \nTip: $${this.getTip()} \nTotal Bill: $${
+      this.subTotal + this.getTax() + this.getTip()
+    }`;
+  };
+}
+
+const customer1 = new Receipt('Mary', 'Beth', 200, 0.1, 'excellent');
+console.log(customer1.getTotalBill());
+const customer2 = new Receipt('Becky', 'Anderson', 100, 0.05, 'good');
+console.log('--------------------------');
+console.log(customer2.getTotalBill());
+
+customer1;
+customer2;
+
+//Prototype
+/// place the function inside the constructor function  by using syntax Receipt.prototype.getTotalBill///
+/// function behaves the same way just won't be included in every instances  ***Also make sure this keyword isn't infront of the syntax////
+
+///convert to ES6 Classes
+class Receipt2 {
+  constructor(first, last, subtotal, tax, service) {
+    this.firstName = first;
+    this.lastName = last;
+    this.subTotal = subtotal;
+    this.taxRate = tax;
+    this.serviceLevel = service;
+  }
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+  geTip() {
+    return this.subTotal * (this.serviceLevel == 'excellent' ? 0.25 : 0.18);
+  }
+  getTax() {
+    return this.taxRate * this.subTotal;
+  }
+  getTotalBill() {
+    return `Bill for: ${this.getFullName()} \nSubtotal: $${
+      this.subTotal
+    } \nTax: $${this.getTax()} \nTip: $${this.getTip()} \nTotal Bill: $${
+      this.subTotal + this.getTax() + this.getTip()
+    }`;
+  }
+}
+
+//codingChallenge 8
+class Bank {
+  constructor(customer, balance) {
+    this.customer = customer;
+    this.balance = balance;
+  }
+  depositMoney(a) {
+    let isANumber = parseInt(a);
+    if (a > 0 && isANumber) {
+      this.balance += a;
+      if (this.balance > 0) {
+        return `$${this.balance}`;
+      } else if (this.balance < 0) {
+        let add = this.balance;
+        return ` Just deposited $${a} your account ballance is negative $${
+          add * -1
+        } needed to be positive`;
+      }
+    } else {
+      return `Error Deposit Money`;
+    }
+  }
+  withdrawMoney(a) {
+    this.balance -= a;
+    let isANumber = parseInt(a);
+    if (a > 0 && isANumber) {
+      let difference = this.balance;
+      return ` ${this.customer} ${
+        difference > 0
+          ? '$' + difference
+          : 'your balance is in the red deposit $' + difference * -1
+      }`;
+    }
+  }
+  getAcctStatement() {
+    return `${this.customer}  ${
+      this.balance > 0
+        ? ' balance is $' + this.balance
+        : 'your balance is negative $' + this.balance * -1
+    }`;
+  }
+}
+
+let bankCustomer1 = new Bank('Larry Jacobs', 500);
+console.log(bankCustomer1.depositMoney(1200));
+console.log(bankCustomer1.withdrawMoney(600));
+console.log(bankCustomer1.getAcctStatement());
+console.log('-----------------------');
+let bankCustomer2 = new Bank('Beth Smith', 1900);
+console.log(bankCustomer2.depositMoney(2400));
+console.log(bankCustomer2.withdrawMoney(1200));
+console.log(bankCustomer2.getAcctStatement());
+console.log('-----------------------');
+let bankCustomer3 = new Bank('Brad Owens', 350);
+console.log(bankCustomer3.depositMoney(30));
+console.log(bankCustomer3.withdrawMoney(550));
+console.log(bankCustomer3.getAcctStatement());
+console.log('-------forEach------');
+const numbers = [1, 2, 3, 4, 5, 6, 7];
