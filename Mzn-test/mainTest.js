@@ -218,3 +218,30 @@ let sumAlltwo = (...a) => {
   }
 };
 console.log(sumAlltwo(123, 1));
+
+const leapYears = (year) => {
+  let isaNumber = parseInt(year);
+  if (isaNumber % 2 == 0) {
+    if (isaNumber % 100 == 0) {
+      if (isaNumber % 400 == 0) {
+      }
+    }
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(leapYears(1996));
+
+const ftoc = (num) => {
+  let answer = (num - 32) * (5 / 9);
+  return answer.toFixed(1);
+};
+console.log(ftoc(-100));
+console.log('-------------');
+const ctof = (num) => {
+  let answer = num * (9 / 5) + 32;
+  return answer.toFixed(1);
+};
+console.log(ctof(-10));
