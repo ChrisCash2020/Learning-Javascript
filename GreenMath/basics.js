@@ -1,42 +1,38 @@
-//difference between let and const refresher
-// let luckyNumber = 21;
-// console.log(luckyNumber);
-// luckyNumber = 13;
-// console.log(luckyNumber);
+console.log('-----difference between let and const refresher-----\n');
+let luckyNumber = 21;
+console.log(luckyNumber);
+luckyNumber = 13;
+console.log(luckyNumber);
 
-//codingChallenge1
-// let averageChecker = () => {
-//   let johnAverage = (90 + 81 + 55 + 70 + 80) / 5;
-//   console.log(`John's old score: ${johnAverage}`);
-//   let meganAverage = (88 + 75 + 87 + 80 + 84) / 5;
-//   console.log(`Megan's old score: ${meganAverage}`);
+console.log('\n----codingChallenge1---');
+let averageChecker = () => {
+  let johnAverage = (90 + 81 + 55 + 70 + 80) / 5;
+  console.log(`John's old score: ${johnAverage}`);
+  let meganAverage = (88 + 75 + 87 + 80 + 84) / 5;
+  console.log(`Megan's old score: ${meganAverage}`);
 
-//   johnAverage = 70;
-//   console.log(`John's new score: ${johnAverage}`);
-//   meganAverage = 70;
-//   console.log(`Megan's new score: ${meganAverage}`);
+  johnAverage = 70;
+  console.log(`John's new score: ${johnAverage}`);
+  meganAverage = 70;
+  console.log(`Megan's new score: ${meganAverage}`);
 
-//   if (johnAverage > meganAverage) {
-//     console.log(`John's class has a higher average of ${johnAverage}`);
-//   } else if (johnAverage < meganAverage) {
-//     console.log(`Megan's class has a higher average of ${meganAverage}`);
-//   } else {
-//     console.log(
-//       `both class scores are ${johnAverage} there isn't a higher average`
-//     );
-//   }
-// };
-// averageChecker();
-//codingChallenge2
+  if (johnAverage > meganAverage) {
+    console.log(`John's class has a higher average of ${johnAverage}`);
+  } else if (johnAverage < meganAverage) {
+    console.log(`Megan's class has a higher average of ${meganAverage}`);
+  } else {
+    console.log(
+      `both class scores are ${johnAverage} there isn't a higher average`
+    );
+  }
+};
+averageChecker();
+
+console.log('\n----codingChallenge2----\n');
 let vote = () => {
   let age = 18;
   let isCitizen = false;
   let isRegistered = false;
-
-  //placed the if statement in a function so that my other if statements could run
-  //the logical not just flips the value of the variable, the if conditon will only run if that variable is true, so if you want to want to asign false so a varibale so it can be understandable
-  //you will also need to appply the ! operator infron so that if statement will run, so basically you are writing a variable for isRaining  for a statement about a good day to jog
-  //you would asign that varible false because it makes sense to not want that true when make a good day statement, so to make sure that that statement runs properly you need to place the ! operator so the value returns true and you can write the conditon with no worries also base your if statement on the value you first asign the variables  in the start
 
   if (age >= 18 && isCitizen && isRegistered) {
     console.log('You can vote!');
@@ -70,27 +66,27 @@ let vote = () => {
   }
 };
 vote();
-//codingChallenge2 My method works and is techincally more effecient but I can learn from the instructors method as well. Its lengthy but I did introduce me to variables inside of if statements
+console.log('---codingChallenge2 different example below---\n');
+//My method works and is techincally more effecient but I can learn from the instructors method as well. Its lengthy but I did introduce me to variables inside of if statements
 
-// if (age >= 18 && isCitizen && isRegistered) {
-//   console.log('You can vote!');
-// } else {
-//   let myMessage = "Sorry, you can't vote,";
+// // if (age >= 18 && isCitizen && isRegistered) {
+// //   console.log('You can vote!');
+// // } else {
+// //   let myMessage = "Sorry, you can't vote,";
 
-//   if (age < 18) {
-//     myMessage += ' , not old enough to vote';
-//   }
-//   if (!isCitizen) {
-//     myMessage += ' , not a citizen yet';
-//   }
-//   if (!isRegistered) {
-//     myMessage += ' , not registered to vote';
-//   }
-//   console.log(myMessage);
-// }
+// //   if (age < 18) {
+// //     myMessage += ' , not old enough to vote';
+// //   }
+// //   if (!isCitizen) {
+// //     myMessage += ' , not a citizen yet';
+// //   }
+// //   if (!isRegistered) {
+// //     myMessage += ' , not registered to vote';
+// //   }
+// //   console.log(myMessage);
+// // }
 
-//codingChalleng3
-//the tutorial hasn't introduced arrays yet I just made one to iterate between each option faster, but understanding how it can be done without an array really makes me understand the use case of arrays
+console.log('\n---codingChallenge3---\n');
 let foodReceipt = () => {
   let arrayFood = ['Hamburger', 'Lasagna', 'Steak'];
   let arrayBeverage = ['Water', 'Soda', 'Beer'];
@@ -171,7 +167,14 @@ Total: $${finalBill}`);
 };
 foodReceipt();
 
-//actually working with functions now I need to find tenary practice sources to get the syntax embedded in my head
+console.log('\n----Misc exercises---\n');
+console.log(
+  '-----*can now be more dynamic with the reduce method notes below*---'
+);
+//to make it more dynamic you can define the first parameter and then make an spread array for the rest they create a reduce mehod;
+//method will go as follows:
+// let studentResult = (firstName, ...array) => {
+// const average = array.reduce((acc, cur) => acc + cur) / array.length; ////The rest of the function is fine
 
 let studentResult = (firstName, test1, test2, test3, test4) => {
   const average = (test1 + test2 + test3 + test4) / 4;
@@ -194,40 +197,25 @@ let studentResult = (firstName, test1, test2, test3, test4) => {
 const chrisScore = studentResult('Chris', 70, 90, 100, 95);
 
 console.log(chrisScore);
-//since the function has parameters listed and there is no console log inside i have to console log it too see the value, placing inside a differenct variable is optional you would normally just assign the function to an event listener like onclick, or combine it with another function
 
-// const month = new Date().getDate();
-// alert(month);
-// console.log(month)
+// //since the function has parameters listed and there is no console log inside i have to console log it too see the value, placing inside a differenct variable is optional you would normally just assign the function to an event listener like onclick, or combine it with another function
 
-//codingChalleng4
-//how I did it
-// let getHours =(day)=> +day * 24;
-// let getMinutes =(day) => +day*24*60;
-// let getSeconds = (day)=> +day*24*60*60;
-
-// console.log(getHours(1))
-
+console.log('\n----codingChallenge4---\n');
 //How he did it
 let getHours = (day) => 24 * day;
 let getMinutes = (day) => getHours(day) * 60;
 let getSeconds = (day) => getMinutes(day) * 60;
 
-// let dayConversion = (day) => `${day} day(s) converts to ${getHours(day)} hours, or ${getMinutes(day)} minutes, or ${getSeconds(day)} seconds.`;
-// dayConversion()
-// console.log(dayConversion('10'));
+let dayConversion = (day) =>
+  `${day} day(s) converts to ${getHours(day)} hours, or ${getMinutes(
+    day
+  )} minutes, or ${getSeconds(day)} seconds.`;
+dayConversion();
+console.log(dayConversion('10'));
 
-// let isANumber = (num)=>{
-//  let numConversion = +(num)
-// if(!numConversion){
-//   return `Enter a number`
-// }else{
-//   return dayConversion(num);
-// }
-// }
-// console.log(isANumber('hi'))
+console.log('----Improved codingChallenge4---');
 
-let dayConversion = (day) => {
+let dayConversion2 = (day) => {
   let isANumber = parseInt(day);
   if (!isANumber || day == ' ') {
     return 'Enter a Number';
@@ -238,117 +226,8 @@ let dayConversion = (day) => {
   }
 };
 
-console.log(dayConversion());
-
-//Okay So I now figured out how to retun a error message per say if the user input isn't the correct value
-// this varaible can be considered a data type converter that you can label 'isANumber' 'isAString'
-//so if you want the user to input a number you will create a variable that is equal to parsInt('parameter')
-//if you want the user to input a string you will create a variable that is equal to String('parameter')
-//after creating that variable you will just make a if statement with the first statement asking whether or not the value
-//when i say value I mean the result, so wheter or not the result of a user input is equal to the varaible converter type by putting the logical not operator (!)
-//if the user Input isn't equivalent to the data choice you want you can send them a message such as
-//"Not a Number" or "Not a String", but if the data the user inputs is correct then you can send them the code that you wanted to send in the first place
-//so In this example I wanted to send a message that would convert the amount of days into smaller units, but I needed the user to input a integer
-//so that the message wouldn't return stupuid shit like  (dayCoversion('hi')) -> "hi days converts to NaN hours...etc"
-
-const storeItems = [
-  'Butter',
-  'Chicken',
-  'Beer',
-  'Steak',
-  'Corn',
-  'Potatoes',
-  'Tomatoes',
-  'Rice',
-];
-// console.log(storeItems.shift())
-const itemPrices = [2, 4, 5, 10, 2, 1, 1, 2];
-
-const groceryList = [
-  'Butter',
-  'Beer',
-  'Steak',
-  'Cereal',
-  'Milk',
-  'Bananas',
-  'Corn',
-];
-
-//set up a function that is going to take in a grocerylist and search through a store item list and send a message wheter they have the item or not
-//how i figured out how to do it
-let getItem = (groceryList, storeItems, itemPrices) => {
-  const myItem = groceryList.shift();
-  const storeItem = storeItems.indexOf(myItem);
-  const itemPrice = itemPrices[storeItem];
-  if (storeItem !== -1) {
-    return `We have ${myItem} in stock. the price is $${itemPrice}.`;
-  } else {
-    return `We don't have ${myItem} in stock.`;
-  }
-};
-//always put a return statement after you last else statement or it will log the else condtion as undefined
-
-while (groceryList.length !== 0) {
-  console.log(getItem(groceryList, storeItems, itemPrices));
-}
-
-//  in his example he made a unnessassary conditon, the condtion was just gonna be used in the while loop anyway so I decided not tho include it but since it din't
-//  effect the solution
-// let getItem = (groceryList, storeItems, itemPrices) => {
-// if (groceryList.length !== 0){
-// const myItem = groceryList.shift();
-// const storeItem = storeItems.indexOf(myItem)
-// const itemPrice = itemPrices[storeItem];
-//  if (storeItem !== -1) {
-//    return `We have ${myItem} in stock. the price is $${itemPrice}.`;
-//  } else {
-//    return `We don't have ${myItem} in stock.`;
-//  }
-// }
-// }
-
-const games = [
-  'Fortnite',
-  'GTA',
-  'Minecraft',
-  'Overwatch',
-  'Call of Duty',
-  'Halo',
-  'Tetris',
-  'Super Mario Bros',
-];
-console.log(games.includes('Minecraft'));
-
-const allStudents = [
-  'Marry',
-  'Jacob',
-  'Beth',
-  'David',
-  'Harry',
-  'Gary',
-  'Alison',
-  'Ned',
-  'Jennifer',
-  'Jessica',
-];
-
-const honorRoll = ['Jacob', 'Beth', 'Harry', 'Jennifer', 'Jessica'];
-allStudents.push('Chris');
-honorRoll.push('Chris');
-
-let honorRollChecker = () => {
-  const student = allStudents.shift();
-  const honorStudent = honorRoll.includes(student);
-  if (honorStudent === true) {
-    return `${student} is on the honor roll.`;
-  } else {
-    return `${student} is not on the honor roll.`;
-  }
-};
-while (allStudents.length !== 0) {
-  console.log(honorRollChecker());
-}
-
+console.log(dayConversion2());
+console.log('\n---codingChallenge5--\n');
 const dinerFoods = [
   'Hamburgers',
   'Pizza',
@@ -387,94 +266,22 @@ while (myFoods.length !== 0) {
   console.log(favFoodChecker());
 }
 
-// let favFoodChecker = (foodsList, cravingslist) => {
-//   if(cravingslist.length !== 0){
-//   const myFood = foodsList.shift();
-//   const dinerFood = cravingslist.includes(myFood);
-//   if (!dinerFood) {
-//     return `The local diner doesn't have ${myFood} one of my favorite foods`;
-//   } else {
-//     return `The local diner has ${myFood} one of my favorite foods`;
-//   }
-// }
-// };
-// console.log(favFoodChecker(myFoods, dinerFoods));
+// // let favFoodChecker = (foodsList, cravingslist) => {
+// //   if(cravingslist.length !== 0){
+// //   const myFood = foodsList.shift();
+// //   const dinerFood = cravingslist.includes(myFood);
+// //   if (!dinerFood) {
+// //     return `The local diner doesn't have ${myFood} one of my favorite foods`;
+// //   } else {
+// //     return `The local diner has ${myFood} one of my favorite foods`;
+// //   }
+// // }
+// // };
+// // console.log(favFoodChecker(myFoods, dinerFoods));
 
-//His example as the same outcome and same drawbacks I feel like we haven't touched on something yet because this sems ineffecient, or I don't understand the use case
+// //His example as the same outcome and same drawbacks I feel like we haven't touched on something yet because this sems ineffecient, or I don't understand the use case
 
-//while loops
-//scores is the array you will pass in
-//i acts like a counter so its going to iterate in the while loop, so you set it equal to 0
-//sumScores is going to take in the array item so you set it to 0 so the array item value is untempered with
-//the scores.length enables that the loop as a endpoint
-//the scores[i] is what actually sets off the counter, so the input array will find the index number correlated to the i varible
-//so it will start of with 0 and then increase by one because of the i++, this function will loop endlessly until it reaches the endpoint
-//remember the endpoint was i<scores.length.
-//they are other while loop iteration formulas i can't process in my mind what they could be but in this example it is average
-//most loops will have the same condtion but the statement will be different depending on the objective,
-//the objective here was average so he did a while statement that will get the sum of the array
-//after getting the sum from a while loop iteration he returned the sum calculated in the while loop by the array length because this is how you calculate average
-//
-let calAverage = (scores) => {
-  let i = 0,
-    sumScores = 0;
-  while (i < scores.length) {
-    sumScores += scores[i];
-    i++;
-  }
-  return sumScores / scores.length;
-};
-
-const jennyScore = calAverage([99, 75, 83, 93]);
-console.log(jennyScore);
-
-const shows = [
-  'Bridgerton',
-  'Fate',
-  'Alon',
-  'Lupin',
-  'Spycraft',
-  '3%',
-  'The Society',
-  'The Rain',
-  'You',
-];
-
-let myList = '',
-  i = 0;
-while (i < shows.length - 1) {
-  myList += shows[i] + ', ';
-  i++;
-}
-myList += `and ${shows[shows.length - 1]}.`;
-console.log(`I really want to watch ${myList}`);
-
-//This is an example of a loop string so he st myList to a string type with ''  placed it in the basica counter statement
-//he made the variable equal the array input values  but seperated by commas,
-//he also stopped the endpoint before the full length so it wouldn't include the last string
-//this was done so that he could re-add it later with myList += `and [last string]`
-//adding this staement and makes it look clean and instead of putting the index number he used the length property minus
-//one to get the most up to date value
-
-for (let i = 0; i < 5; i++) {
-  if (i % 2 === 0) {
-    console.log(`The number ${i} is an even number.`);
-  } else {
-    console.log(`The number ${i} is an odd number.`);
-  }
-}
-
-// for(let i = 0; i<49; i++){
-//   if( Math.sqrt(i) % 1 === 0 && Math.cbrt(i) % 1 === 0){
-//     console.log(`The number ${i} is a perfect square and a perfect cube`)
-//   }else if (Math.sqrt(i) % 1 === 0){
-//     console.log(`The number ${i} is a perfect square`)
-//   }else if (Math.cbrt(i) % 1 === 0 ){
-//     console.log(`the number ${i} is a pefect cube`)
-//   }
-// }
-
-//codingChallenge6
+console.log('\n---codingChallenge6--\n');
 
 const malelifters = [
   ['Jamie', 1050],
@@ -514,66 +321,8 @@ let lifterResults = (array) => {
   return myMsg;
 };
 
-console.log(lifterResults(malelifters));
-
-//Introduction into objects
-
-const item1 = {
-  item: 'Butter',
-  price: 3,
-  stock: 500,
-  onOrder: true,
-};
-const item2 = {
-  item: 'Butter',
-  price: 3,
-  stock: 500,
-  onOrder: true,
-};
-const item3 = {
-  item: 'Butter',
-  price: 3,
-  stock: 500,
-  onOrder: true,
-};
-const item4 = {
-  item: 'Butter',
-  price: [3, 4, 5, 5],
-  stock: 500,
-  onOrder: true,
-  'my Favorite Foods': ['lasagna', 'Pizza', 'Tacos'],
-};
-
-const storeInventory = [item1, item2, item3, item4];
-
-function Student(first, last, lvl, scores) {
-  this.firstName = first;
-  this.lastName = last;
-  this.classLevel = lvl;
-  this.scores = scores;
-  this.getFullName = function () {
-    return `${this.firstName} ${this.lastName}`;
-  };
-  this.getMyGrade = function () {
-    let mySum = 0;
-    for (i = 0; i < this.scores.length; i++) {
-      mySum += this.scores[i];
-    }
-    return mySum / this.scores.length;
-  };
-}
-const student1 = new Student('Mary', 'Adams', 'Junior', 'A');
-student1;
-const student2 = new Student('Chris', 'Olowokere', 'Senior', [50, 90, 80, 85]);
-student2.firstName = 'David';
-student2;
-
-console.log(student2.getMyGrade());
-
-// let allStudents1 = {student1, student2};
-// allStudents1;
-
-//codingChallenge 7
+console.log(lifterResults(allLifters));
+console.log('\n----codingChallenge7---\n');
 
 function Receipt(first, last, subtotal, tax, service) {
   this.firstName = first;
@@ -605,41 +354,7 @@ const customer2 = new Receipt('Becky', 'Anderson', 100, 0.05, 'good');
 console.log('--------------------------');
 console.log(customer2.getTotalBill());
 
-customer1;
-customer2;
-
-//Prototype
-/// place the function inside the constructor function  by using syntax Receipt.prototype.getTotalBill///
-/// function behaves the same way just won't be included in every instances  ***Also make sure this keyword isn't infront of the syntax////
-
-///convert to ES6 Classes
-class Receipt2 {
-  constructor(first, last, subtotal, tax, service) {
-    this.firstName = first;
-    this.lastName = last;
-    this.subTotal = subtotal;
-    this.taxRate = tax;
-    this.serviceLevel = service;
-  }
-  getFullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-  geTip() {
-    return this.subTotal * (this.serviceLevel == 'excellent' ? 0.25 : 0.18);
-  }
-  getTax() {
-    return this.taxRate * this.subTotal;
-  }
-  getTotalBill() {
-    return `Bill for: ${this.getFullName()} \nSubtotal: $${
-      this.subTotal
-    } \nTax: $${this.getTax()} \nTip: $${this.getTip()} \nTotal Bill: $${
-      this.subTotal + this.getTax() + this.getTip()
-    }`;
-  }
-}
-
-//codingChallenge 8
+console.log('\n----codingChallenge8---\n');
 class Bank {
   constructor(customer, balance) {
     this.customer = customer;
@@ -686,15 +401,327 @@ let bankCustomer1 = new Bank('Larry Jacobs', 500);
 console.log(bankCustomer1.depositMoney(1200));
 console.log(bankCustomer1.withdrawMoney(600));
 console.log(bankCustomer1.getAcctStatement());
-console.log('-----------------------');
+console.log('-----------------------\n-----------------------');
 let bankCustomer2 = new Bank('Beth Smith', 1900);
 console.log(bankCustomer2.depositMoney(2400));
 console.log(bankCustomer2.withdrawMoney(1200));
 console.log(bankCustomer2.getAcctStatement());
-console.log('-----------------------');
+console.log('-----------------------\n-----------------------');
 let bankCustomer3 = new Bank('Brad Owens', 350);
 console.log(bankCustomer3.depositMoney(30));
 console.log(bankCustomer3.withdrawMoney(550));
 console.log(bankCustomer3.getAcctStatement());
-console.log('-------forEach------');
-const numbers = [1, 2, 3, 4, 5, 6, 7];
+
+console.log('\n-----codingChallenge9-------\n');
+
+class Item {
+  constructor(itemName, amount) {
+    this.itemName = itemName;
+    this.amount = amount;
+  }
+  // calcAmountTotal() {
+  //   let indexCounter = 0;
+  //   for (let i = 0; i < this.itemName.length; i++) {
+  //     indexCounter += this.itemName[i].amount;
+  //     if (i === this.itemName.length - 1) {
+  //     return indexCounter;
+  //     }
+  //   }
+  //   return indexCounter;
+  // }
+  // summaryStatement(){
+  //   return `Total Expense: ${this.calcAmountTotal()}`
+  // }
+}
+
+const officeExp = [
+  new Item('Supplies', 30),
+  new Item('Computer', 900),
+  new Item('Utilities', 150),
+  new Item('Software', 200),
+];
+const travelExp = [
+  new Item('Meals', 800),
+  new Item('Entertainment', 500),
+  new Item('Car Rentals', 700),
+  new Item('Flights', 900),
+];
+const payroll = [
+  new Item('Jacobs', 900),
+  new Item('Bryan', 900),
+  new Item('Davis', 900),
+  new Item('Edison', 900),
+  new Item('Brown', 600),
+];
+const fees = [
+  new Item('state', 300),
+  new Item('federal', 600),
+  new Item('city', 900),
+];
+
+let allBusinessExpenses = [].concat(officeExp, travelExp, payroll, fees);
+let test = 0;
+let summaryStatement = allBusinessExpenses.forEach((element, index, array) => {
+  test += element.amount;
+  console.log(`${element.itemName} : $${element.amount}`);
+});
+console.log(`\nTotal Expenses: ${test}`);
+
+console.log('\n-----codingChallenge10-----\n');
+
+const jennifer = ['Tacos', 'Hamburgers', 'Meatballs'];
+const max = ['Tuna', 'Veal', 'Chicken'];
+const ben = ['Eggrolls', 'Salad', 'Fried Rice'];
+const menuItems = [
+  'Eggrolls',
+  'Chips with Salsa',
+  'Pork Dippers',
+  'Meatballs',
+  'Tacos',
+  'Salad',
+  'Hamburgers',
+  'Tuna',
+  'Veal',
+  'Pizza',
+  'Chicken',
+  'Fried Rice',
+  'Pasta',
+];
+
+let modifiedMenu = (...array) => {
+  const [...items] = array;
+  let test = [].concat(...items);
+  test.forEach((element) => {
+    if (menuItems.includes(element)) {
+      menuItems.splice(menuItems.indexOf(element), 1);
+    }
+  });
+  return menuItems;
+};
+
+console.log(modifiedMenu(jennifer, max, ben));
+
+console.log('----Object Destructuring----');
+
+const mall = {
+  mallName: 'Mall of Irvine',
+  address: {
+    street: '555 Main Street',
+    city: 'Irvine',
+    state: 'CA',
+    zip: '92620',
+  },
+  anchorStores: ["Macy's", 'Sears', "Dick's Sporting Goods", 'JCPenny'],
+  fastFood: ['Panda Express 🐥', 'Subway 🥪', 'Burger King 🍔'],
+  restaurants: [
+    'Red Lobster',
+    'Cheesecake Factory',
+    'California Pizza Kitchen',
+  ],
+};
+
+const { mallName: localMall, address: mallAdress } = mall;
+
+console.log(mallAdress.street);
+
+console.log('\n-----codingChallenge11-----\n');
+class Student {
+  constructor(
+    firstName,
+    lastName,
+    age,
+    scoreSAT,
+    currentGPA,
+    extraCurriculars,
+    recommendations,
+    apClasses
+  ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.scoreSAT = scoreSAT;
+    this.currentGPA = currentGPA;
+    this.extraCurriculars = extraCurriculars;
+    this.recommendations = recommendations;
+    this.apClasses = apClasses;
+  }
+  collegeAdmission() {
+    let {
+      firstName,
+      lastName,
+      age,
+      scoreSAT,
+      currentGPA,
+      extraCurriculars,
+      recommendations,
+      apClasses,
+    } = this;
+    if (
+      (age < 17,
+      scoreSAT >= 1500,
+      currentGPA >= 3.8,
+      extraCurriculars.length >= 3,
+      recommendations.length >= 3,
+      apClasses.length >= 3)
+    ) {
+      return `Congratulations you are admitted to a top tier university`;
+    } else if (
+      (age < 17,
+      scoreSAT >= 1250,
+      currentGPA >= 3.0,
+      extraCurriculars.length >= 1,
+      recommendations.length >= 1,
+      apClasses.length >= 1)
+    ) {
+      return `Congratulations you are admitted to a state university`;
+    } else if ((age < 17, scoreSAT >= 1000, currentGPA >= 2.5)) {
+      return `Congratulations you are admitted to the community collge`;
+    } else {
+      return `Sorry you don't qualify yet`;
+    }
+  }
+}
+
+const teststudent1 = new Student(
+  'Jennifer',
+  'Davis',
+  17,
+  1400,
+  3.5,
+  ['Swim Team', 'Debate', 'Chess Club'],
+  ['Steven Grier', 'Larry Fitzgerald', 'Beth Owens'],
+  ['AP Economics']
+);
+
+const teststudent2 = new Student(
+  'Megan',
+  'Brown',
+  17,
+  1500,
+  4,
+  ['Golf', 'English Club', 'Math Club', 'Chess Club'],
+  ['Steven Grier', 'Nancy Holcomb', 'Betty Smith', 'Jack Morgan'],
+  ['AP Economics', 'AP Calculus', 'AP English']
+);
+const teststudent3 = new Student(
+  'Brad',
+  'Jenkins',
+  18,
+  1000,
+  2.5,
+  ['Football', 'Track and Field'],
+  ['Coach Smith', 'Coach Quill'],
+  []
+);
+const teststudent4 = new Student('Alvin', 'Andrews', 19, 800, 1.9, [], [], []);
+const teststudent5 = new Student(
+  'Linda',
+  'Edwards',
+  16,
+  1100,
+  2.9,
+  ['Writing Club'],
+  ['Betty Smith'],
+  ['AP English']
+);
+console.log(teststudent1.collegeAdmission());
+
+console.log('\n-----codingChallenge12-----\n');
+class Student1 {
+  constructor(fullName, lvl, tests) {
+    this.fullName = fullName;
+    this.lvl = lvl;
+    this.tests = tests;
+  }
+  getSummary() {
+    this.average = Math.round(
+      this.tests.reduce((acc, cur) => acc + cur) / this.tests.length
+    );
+    this.passed = this.average >= 70 ? 'passed' : 'failed';
+    this.letterGrade =
+      this.getAverage >= 90
+        ? 'A'
+        : this.average >= 80
+        ? 'B'
+        : this.average >= 70
+        ? 'C'
+        : this.average >= 60
+        ? 'D'
+        : 'F';
+
+    return `${this.fullName} has ${this.passed} the ${this.lvl} year of school with an average of ${this.average} and a letter grade of ${this.letterGrade}.`;
+  }
+}
+const student1 = new Student1('Michael Fisher', 'Junior', [
+  91,
+  79,
+  82,
+  85,
+  97,
+  75,
+]);
+const student2 = new Student1('Sean Payne', 'Senior', [65, 90, 71, 62, 60, 80]);
+const student3 = new Student1('Jessica Wilkins', 'Freshman', [
+  100,
+  91,
+  95,
+  90,
+  89,
+  80,
+  92,
+  97,
+]);
+const student4 = new Student1('Vanessa Nolan', 'Sophomore', [
+  80,
+  60,
+  55,
+  51,
+  60,
+  42,
+]);
+const student5 = new Student1('Gary Anderson', 'Freshman', [
+  80,
+  75,
+  77,
+  70,
+  71,
+]);
+const student6 = new Student1('Kim Lee', 'Junior', [99, 98, 100, 94, 90]);
+const student7 = new Student1('Rachel Smith', 'Freshman', [
+  50,
+  41,
+  43,
+  90,
+  81,
+  55,
+  57,
+  91,
+]);
+const student8 = new Student1('Stephanie Nolan', 'Senior', [
+  95,
+  80,
+  85,
+  70,
+  100,
+  100,
+]);
+const myClass = [
+  student1,
+  student2,
+  student3,
+  student4,
+  student5,
+  student6,
+  student7,
+  student8,
+];
+
+myClass.forEach((element) => {
+  element.getSummary();
+  console.log(element.getSummary());
+});
+
+const highestAverage = myClass.reduce(
+  (acc, cur) => (acc > cur.average ? acc : cur.average),
+  myClass[0].average
+);

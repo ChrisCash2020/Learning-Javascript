@@ -1,0 +1,302 @@
+//   //placed the if statement in a function so that my other if statements could run
+//   //the logical not just flips the value of the variable, the if conditon will only run if that variable is true, so if you want to want to asign false so a varibale so it can be understandable
+//   //you will also need to appply the ! operator infron so that if statement will run, so basically you are writing a variable for isRaining  for a statement about a good day to jog
+//   //you would asign that varible false because it makes sense to not want that true when make a good day statement, so to make sure that that statement runs properly you need to place the ! operator so the value returns true and you can write the conditon with no worries also base your if statement on the value you first asign the variables  in the start
+
+
+
+// // need to find tenary practice sources to get the syntax embedded in my head
+
+
+//A way to require a number but isn't precise enough since it takes strings as well
+// let isANumber = (num)=>{
+//  let numConversion = +(num)
+// if(!numConversion){
+//   return `Enter a number`
+// }else{
+//   return dayConversion(num);
+// }
+// }
+// console.log(isANumber('10'))
+
+
+// //Okay So I now figured out how to retun a error message per say if the user input isn't the correct value
+// // this varaible can be considered a data type converter that you can label 'isANumber' 'isAString'
+// //so if you want the user to input a number you will create a variable that is equal to parsInt('parameter')
+// //if you want the user to input a string you will create a variable that is equal to String('parameter')
+// //after creating that variable you will just make a if statement with the first statement asking whether or not the value
+// //when i say value I mean the result, so wheter or not the result of a user input is equal to the varaible converter type by putting the logical not operator (!)
+// //if the user Input isn't equivalent to the data choice you want you can send them a message such as
+// //"Not a Number" or "Not a String", but if the data the user inputs is correct then you can send them the code that you wanted to send in the first place
+// //so In this example I wanted to send a message that would convert the amount of days into smaller units, but I needed the user to input a integer
+// //so that the message wouldn't return stupuid shit like  (dayCoversion('hi')) -> "hi days converts to NaN hours...etc"
+
+ console.log('----While loop exercise----')
+const storeItems = [
+  'Butter',
+  'Chicken',
+  'Beer',
+  'Steak',
+  'Corn',
+  'Potatoes',
+  'Tomatoes',
+  'Rice',
+];
+// console.log(storeItems.shift())
+const itemPrices = [2, 4, 5, 10, 2, 1, 1, 2];
+
+const groceryList = [
+  'Butter',
+  'Beer',
+  'Steak',
+  'Cereal',
+  'Milk',
+  'Bananas',
+  'Corn',
+];
+
+//set up a function that is going to take in a grocerylist and search through a store item list and send a message wheter they have the item or not
+//how i figured out how to do it
+let getItem = (groceryList, storeItems, itemPrices) => {
+  const myItem = groceryList.shift();
+  const storeItem = storeItems.indexOf(myItem);
+  const itemPrice = itemPrices[storeItem];
+  if (storeItem !== -1) {
+    return `We have ${myItem} in stock. the price is $${itemPrice}.`;
+  } else {
+    return `We don't have ${myItem} in stock.`;
+  }
+};
+//always put a return statement after you last else statement or it will log the else condtion as undefined
+
+while (groceryList.length !== 0) {
+  console.log(getItem(groceryList, storeItems, itemPrices));
+  return getItem(groceryList, storeItems, itemPrices);
+}
+
+// //  in his example he made a unnessassary conditon, the condtion was just gonna be used in the while loop anyway so I decided not tho include it but since it din't
+// //  effect the solution
+// // let getItem = (groceryList, storeItems, itemPrices) => {
+// // if (groceryList.length !== 0){
+// // const myItem = groceryList.shift();
+// // const storeItem = storeItems.indexOf(myItem)
+// // const itemPrice = itemPrices[storeItem];
+// //  if (storeItem !== -1) {
+// //    return `We have ${myItem} in stock. the price is $${itemPrice}.`;
+// //  } else {
+// //    return `We don't have ${myItem} in stock.`;
+// //  }
+// // }
+// // }
+
+// const games = [
+//   'Fortnite',
+//   'GTA',
+//   'Minecraft',
+//   'Overwatch',
+//   'Call of Duty',
+//   'Halo',
+//   'Tetris',
+//   'Super Mario Bros',
+// ];
+// console.log(games.includes('Minecraft'));
+
+// const allStudents = [
+//   'Marry',
+//   'Jacob',
+//   'Beth',
+//   'David',
+//   'Harry',
+//   'Gary',
+//   'Alison',
+//   'Ned',
+//   'Jennifer',
+//   'Jessica',
+// ];
+
+// const honorRoll = ['Jacob', 'Beth', 'Harry', 'Jennifer', 'Jessica'];
+// allStudents.push('Chris');
+// honorRoll.push('Chris');
+
+// let honorRollChecker = () => {
+//   const student = allStudents.shift();
+//   const honorStudent = honorRoll.includes(student);
+//   if (honorStudent === true) {
+//     return `${student} is on the honor roll.`;
+//   } else {
+//     return `${student} is not on the honor roll.`;
+//   }
+// };
+// while (allStudents.length !== 0) {
+//   console.log(honorRollChecker());
+// }
+
+// //while loops
+// //scores is the array you will pass in
+// //i acts like a counter so its going to iterate in the while loop, so you set it equal to 0
+// //sumScores is going to take in the array item so you set it to 0 so the array item value is untempered with
+// //the scores.length enables that the loop as a endpoint
+// //the scores[i] is what actually sets off the counter, so the input array will find the index number correlated to the i varible
+// //so it will start of with 0 and then increase by one because of the i++, this function will loop endlessly until it reaches the endpoint
+// //remember the endpoint was i<scores.length.
+// //they are other while loop iteration formulas i can't process in my mind what they could be but in this example it is average
+// //most loops will have the same condtion but the statement will be different depending on the objective,
+// //the objective here was average so he did a while statement that will get the sum of the array
+// //after getting the sum from a while loop iteration he returned the sum calculated in the while loop by the array length because this is how you calculate average
+// //
+
+
+// let calAverage = (scores) => {
+//   let i = 0,
+//     sumScores = 0;
+//   while (i < scores.length) {
+//     sumScores += scores[i];
+//     i++;
+//   }
+//   return sumScores / scores.length;
+// };
+
+// const jennyScore = calAverage([99, 75, 83, 93]);
+// console.log(jennyScore);
+
+// const shows = [
+//   'Bridgerton',
+//   'Fate',
+//   'Alon',
+//   'Lupin',
+//   'Spycraft',
+//   '3%',
+//   'The Society',
+//   'The Rain',
+//   'You',
+// ];
+
+// let myList = '',
+//   i = 0;
+// while (i < shows.length - 1) {
+//   myList += shows[i] + ', ';
+//   i++;
+// }
+// myList += `and ${shows[shows.length - 1]}.`;
+// console.log(`I really want to watch ${myList}`);
+
+// //This is an example of a loop string so he st myList to a string type with ''  placed it in the basica counter statement
+// //he made the variable equal the array input values  but seperated by commas,
+// //he also stopped the endpoint before the full length so it wouldn't include the last string
+// //this was done so that he could re-add it later with myList += `and [last string]`
+// //adding this staement and makes it look clean and instead of putting the index number he used the length property minus
+// //one to get the most up to date value
+
+// for (let i = 0; i < 5; i++) {
+//   if (i % 2 === 0) {
+//     console.log(`The number ${i} is an even number.`);
+//   } else {
+//     console.log(`The number ${i} is an odd number.`);
+//   }
+// }
+
+// // for(let i = 0; i<49; i++){
+// //   if( Math.sqrt(i) % 1 === 0 && Math.cbrt(i) % 1 === 0){
+// //     console.log(`The number ${i} is a perfect square and a perfect cube`)
+// //   }else if (Math.sqrt(i) % 1 === 0){
+// //     console.log(`The number ${i} is a perfect square`)
+// //   }else if (Math.cbrt(i) % 1 === 0 ){
+// //     console.log(`the number ${i} is a pefect cube`)
+// //   }
+// // }
+
+
+object constructor problem
+
+
+// function Student(first, last, lvl, scores) {
+//   this.firstName = first;
+//   this.lastName = last;
+//   this.classLevel = lvl;
+//   this.scores = scores;
+//   this.getFullName = function () {
+//     return `${this.firstName} ${this.lastName}`;
+//   };
+//   this.getMyGrade = function () {
+//     let mySum = 0;
+//     for (i = 0; i < this.scores.length; i++) {
+//       mySum += this.scores[i];
+//     }
+//     return mySum / this.scores.length;
+//   };
+// }
+// const student1 = new Student('Mary', 'Adams', 'Junior', 'A');
+// student1;
+// const student2 = new Student('Chris', 'Olowokere', 'Senior', [50, 90, 80, 85]);
+// student2.firstName = 'David';
+// student2;
+
+// console.log(student2.getMyGrade());
+
+// // let allStudents1 = {student1, student2};
+// // allStudents1;
+
+
+
+// //Prototype
+// /// place the function inside the constructor function  by using syntax Receipt.prototype.getTotalBill///
+// /// function behaves the same way just won't be included in every instances  ***Also make sure this keyword isn't infront of the syntax////
+
+// ///convert to ES6 Classes
+// class Receipt2 {
+//   constructor(first, last, subtotal, tax, service) {
+//     this.firstName = first;
+//     this.lastName = last;
+//     this.subTotal = subtotal;
+//     this.taxRate = tax;
+//     this.serviceLevel = service;
+//   }
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   }
+//   geTip() {
+//     return this.subTotal * (this.serviceLevel == 'excellent' ? 0.25 : 0.18);
+//   }
+//   getTax() {
+//     return this.taxRate * this.subTotal;
+//   }
+//   getTotalBill() {
+//     return `Bill for: ${this.getFullName()} \nSubtotal: $${
+//       this.subTotal
+//     } \nTax: $${this.getTax()} \nTip: $${this.getTip()} \nTotal Bill: $${
+//       this.subTotal + this.getTax() + this.getTip()
+//     }`;
+//   }
+// }
+
+// //I dont know wtf this is for
+
+// const numbers = [1, 4];
+// let doubleNumbers = [];
+
+// numbers.forEach(function (element, index) {
+//   if (index == 1) {
+//     doubleNumbers = (element + index) * 2;
+//     console.log(doubleNumbers);
+//     return doubleNumbers;
+//   }
+// });
+// console.log(doubleNumbers);
+
+// let concat = (array1, array2, array3) => {
+//   return [].concat(array1, array2, array3);
+// };
+
+// const cf = ['ricky', 'john', 'mallory', 'josh']
+// const cf2 = ['ricky', 'john', 'mallory', 'josh'];
+// const cf3 = ['ricky', 'john', 'mallory', 'josh'];
+
+// const allfriends = concat(cf, cf2, cf3);
+// console.log(allfriends)
+
+// allfriends.forEach(function(element, index, array){
+// // element;
+
+// // index;
+// // array;
+// })

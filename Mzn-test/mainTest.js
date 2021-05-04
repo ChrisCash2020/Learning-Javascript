@@ -153,6 +153,7 @@
 //OdinProject Exercise 5
 let sumAll = (...num) => {
   let isANumber = parseInt(num[0]);
+  isANumber;
   let myPop = 0;
   if (num[0] > 0 && num[1] > 0 && isANumber) {
     if (num[1] < num[0]) {
@@ -181,33 +182,39 @@ let sumAll = (...num) => {
   }
 };
 
-console.log(sumAll(1, 4));
+console.log(sumAll('hi'));
 
 //can get the same result with forEach 😠
 
 let sumAlltwo = (...a) => {
+  let isANumber = parseInt(a[0]);
+  isANumber;
   let counterSum = 0;
-  a.forEach(function (element, index, array) {
-    if (array[0] < array[1]) {
-      if (index === 0) {
-        for (i = 0; i <= array[1]; i++) {
-          counterSum += i;
-          if (i == array[1]) {
-            return counterSum;
+  if (isANumber) {
+    a.forEach(function (element, index, array) {
+      if (array[0] < array[1]) {
+        if (index === 0) {
+          for (i = 0; i <= array[1]; i++) {
+            counterSum += i;
+            if (i == array[1]) {
+              return counterSum;
+            }
+          }
+        }
+      } else if (array[0] > array[1]) {
+        if (index === 1) {
+          for (i = 0; i <= array[0]; i++) {
+            counterSum += i;
+            if (i == array[0]) {
+              return counterSum;
+            }
           }
         }
       }
-    } else if (array[0] > array[1]) {
-      if (index === 1) {
-        for (i = 0; i <= array[0]; i++) {
-          counterSum += i;
-          if (i == array[0]) {
-            return counterSum;
-          }
-        }
-      }
-    }
-  });
-  return counterSum;
+    });
+    return counterSum;
+  } else {
+    return 'Error';
+  }
 };
-console.log(sumAlltwo(1, 4));
+console.log(sumAlltwo(123, 1));
