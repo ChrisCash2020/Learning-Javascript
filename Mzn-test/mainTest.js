@@ -221,18 +221,14 @@ console.log(sumAlltwo(123, 1));
 
 const leapYears = (year) => {
   let isaNumber = parseInt(year);
-  if (isaNumber % 2 == 0) {
-    if (isaNumber % 100 == 0) {
-      if (isaNumber % 400 == 0) {
-      }
-    }
+  if (isaNumber % 4 == 0 && isaNumber % 100 && isaNumber % 400) {
     return true;
   } else {
     return false;
   }
 };
 
-console.log(leapYears(1996));
+console.log(leapYears(2020));
 
 const ftoc = (num) => {
   let answer = (num - 32) * (5 / 9);
