@@ -1,0 +1,19 @@
+let p = document.querySelector('p');
+p.style.fontSize = '25px';
+
+document.addEventListener('keydown', function (e) {
+  let val = parseInt(p.style.fontSize, 10);
+  let x = e.key;
+  if (x === 'ArrowUp') {
+    val += 10;
+  } else if (x === 'ArrowDown') {
+    val -= 10;
+  }
+  p.style.fontSize = val + 'px';
+});
+
+
+to dynamically change the any css property based on a event fire up you first need to convert the value of said property into a number through parseInt('string', and radix)
+the radix isn't important per say it is juse the character count as far as im aware 
+the string portion is the font property you are choosing to alter 
+this string style property should also be labeled before hand with a default value
