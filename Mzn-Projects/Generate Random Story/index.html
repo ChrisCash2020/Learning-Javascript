@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form class="form">
+      <div class="form-name flex">
+        <label for="">Enter custom name:</label>
+        <input type="text" id="subName" />
+      </div>
+      <div class="form-check flex">
+        <label for="">US</label>
+        <input type="radio" name="country" value="us" id="us" checked="true" />
+        <label for="">UK</label>
+        <input type="radio" name="country" value="uk" id="uk" />
+      </div>
+      <input type="submit" id="btn" value="Generate random story" />
+    </form>
+    <div class="gen-text"></div>
+  </body>
+  <script src="./app.js"></script>
+</html>
