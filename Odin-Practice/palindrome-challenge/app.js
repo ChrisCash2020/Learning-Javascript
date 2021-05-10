@@ -1,47 +1,32 @@
 let palindromes = function (string) {
-  let newString;
+  let newString = string.toLowerCase().split('').slice();
+  let removeFromString = newString.filter(function (letter) {
+    return letter.replace(/[^\w\s]|_/g, '');
+  });
+  let join = removeFromString.join('');
+  join;
+  let whitespace = join.replace(/ /g, '');
+  whitespace;
+  let length = removeFromString.length;
+  length;
   let val;
   let reverseString = '';
-  let result = !!string.match(/^[.,:!?]/);
-  if (result) {
-    let tempString = string.replace(/[^\w\s]|_/g, '');
-    tempString;
-    newString = tempString.toLowerCase().split('').slice();
-    newString;
-    for (i = 0; i <= string.length - 2; i++) {
-      reverseString += newString.pop();
-      reverseString;
-      if (i == string.length - 2) {
-        reverseString;
-        val = reverseString == tempString.toLowerCase() ? true : false;
-        val;
-      }
-    }
-    return val;
-  } else if (!result) {
-    let test = string.indexOf();
-    test;
-    newString = string.toLowerCase().split('').slice();
-    for (i = 0; i <= string.length - 1; i++) {
-      reverseString += newString.pop();
-      if (i == string.length - 1) {
-        val = reverseString == string.toLowerCase() ? true : false;
-        val;
-      }
-    }
-    return val;
-  }
 
-  //   if (1 + 1 == 2) {
-  //     for (i = 0; i <= string.length - 1; i++) {
-  //       reverseString += newString.pop();
-  //       if (i == string.length - 1) {
-  //         val = reverseString == string.toLowerCase() ? true : false;
-  //         val;
-  //       }
-  //     }
-  //     return val;
-  //   }
+  if (typeof string === 'string') {
+    for (i = 0; i <= length - 1; i++) {
+      reverseString += removeFromString.pop();
+      reverseString;
+      if (i == length - 1) {
+        let reverse = reverseString.replace(/ /g, '');
+        reverse;
+        val = reverse == whitespace ? true : false;
+        val;
+      }
+    }
+    return val;
+  } else if (typeof string !== '') {
+    return `Enter a word`;
+  }
 };
 
-console.log(palindromes('Racecar!'));
+console.log(palindromes('A car, a man, a maraca.'));
