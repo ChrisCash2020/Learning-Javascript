@@ -27,3 +27,14 @@ const fibonacci = function (num) {
   }
 };
 console.log(fibonacci(8));
+
+///the answer that made me want to die
+//fr all he did was write the formula for fibonnaci in the push statement kill me now
+// const fibonacci = (num) => {
+//     let arry = [0,1]
+//   for (i = 2; i < num + 1; i++) {
+//       arry.push(arry[i-2] + arry[i-1]);
+//   }
+//   return arry[num]
+// };
+// console.log(fibonacci(8));
