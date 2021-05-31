@@ -1,0 +1,24 @@
+function pairElement(str) {
+  let bigArray = [];
+str = str.split("")
+str.forEach((element)=>{
+  switch(element){
+    case element = "G":
+     bigArray.push([element, "C"]);
+    break;
+     case element = "C":
+     bigArray.push([element, "G"]);
+    break;
+     case element = "A":
+     bigArray.push([element, "T"]);
+    break;
+     case element = "T":
+     bigArray.push([element, "A"]);
+    break;
+  }
+})
+return bigArray;
+}
+
+// pairElement("GCG");
+console.log(pairElement("GCG"))

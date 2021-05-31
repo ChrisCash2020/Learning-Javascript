@@ -1,0 +1,14 @@
+function translatePigLatin(str) {
+  let regTest = /^[^a|e|i|o|u]+/g
+  let regTest2 = /^[a|e|i|o|u]+/g
+
+  if(regTest.test(str)){
+     return str.replace(regTest, "") + str.match(regTest, "$&") + "ay"
+  }else if(regTest2.test(str)) {
+    return str + "way"
+  }
+ 
+}
+
+// translatePigLatin("consonant");
+console.log(translatePigLatin("algorithm"))

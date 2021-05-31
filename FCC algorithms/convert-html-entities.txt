@@ -1,0 +1,27 @@
+function convertHTML(str) {
+  let storeStr = str.slice()
+str = str.split("")
+str.forEach((element)=>{
+  switch(element){
+    case element = "&":
+    storeStr = storeStr.replace(element, "&amp;")
+    break;
+     case element = "<":
+    storeStr = storeStr.replace(element, "&lt;")
+    break;
+     case element = ">":
+    storeStr = storeStr.replace(element, "&gt;")
+    break;
+     case element = '"':
+    storeStr = storeStr.replace(element, "&quot;")
+    break;
+     case element = "'":
+    storeStr = storeStr.replace(element, "&apos;")
+    break;
+  }
+})
+return storeStr
+}
+
+// convertHTML("Dolce & Gabbana");
+console.log(convertHTML("Hamburgers < Pizza < Tacos"))

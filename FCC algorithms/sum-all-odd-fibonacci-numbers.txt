@@ -1,0 +1,18 @@
+function sumFibs(num) {
+  let arry = [0,1]
+    for (let i = 2; i < num + 1; i++) {
+      arry.push(arry[i-2] + arry[i-1]);
+  }
+  let total = 0;
+let i = 1;
+while(arry[i]<=num){
+  if(arry[i] % 2 != 0){
+    total += arry[i]
+  }
+i++
+}
+return total
+}
+
+// sumFibs(4);
+console.log(sumFibs(1000))

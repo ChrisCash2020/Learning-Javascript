@@ -1,0 +1,15 @@
+function myReplace(str, before, after) {
+  // return str.replace(before, after)
+  let regLower = /^[a-z]/g
+  let regCapital = /^[A-Z]/g
+  if(regLower.test(before)){
+   after = after.replace(after[0], after[0].toLowerCase())
+  return str.replace(before, after)
+  }else if(regCapital.test(before)){
+   after = after.replace(after[0], after[0].toUpperCase())
+return str.replace(before, after)
+  }
+}
+
+// myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+console.log(myReplace("I think we should look up there", "up", "Down"))

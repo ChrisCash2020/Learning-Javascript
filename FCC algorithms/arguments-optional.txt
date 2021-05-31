@@ -1,0 +1,27 @@
+let argumentCheck = (argument) =>{
+if(typeof argument === "number"){
+  return true 
+}else {
+  return false
+}
+}
+function addTogether() {
+let firstArgument = arguments[0];
+if(arguments.length >1){
+  let secondArgument = arguments[1];
+  if(argumentCheck(firstArgument)  && argumentCheck(secondArgument)){
+return firstArgument + secondArgument
+  }
+  
+}else if(arguments.length === 1 && argumentCheck(firstArgument)){
+  return function(secondArgument){
+    if(argumentCheck(secondArgument)){
+      return firstArgument + secondArgument
+    }
+  }
+}
+return undefined
+}
+
+
+console.log(addTogether(2)(5))

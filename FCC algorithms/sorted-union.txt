@@ -1,0 +1,18 @@
+function uniteUnique(arr,...rest) {
+  rest = rest.join().split(",")
+  let newArry = []
+  rest.forEach((element)=>{
+   newArry.push(+element)
+  })
+
+ newArry.forEach((element)=>{
+   if(!arr.includes(element)){
+     arr.push(element)
+   }
+ })
+ return arr
+}
+
+// uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+// uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
+console.log(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]))

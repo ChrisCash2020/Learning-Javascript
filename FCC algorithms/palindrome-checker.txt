@@ -1,0 +1,17 @@
+function palindrome(str) {
+  str = str.toLowerCase().replace(/[^A-Za-z0-9]/g, "")
+  let word2 = str.split("");
+  let myWord = ""
+for(let i = str.length -1; i>=0; i--){
+  myWord += word2[i]
+}
+  if(myWord == str){
+    return true;
+  }
+  return false;
+  
+}
+
+
+
+console.log(palindrome("1 eye for of 1 eye."));

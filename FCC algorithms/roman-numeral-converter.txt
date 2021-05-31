@@ -1,0 +1,31 @@
+function convertToRoman(num) {
+let romanToNum = {
+  M:1000,
+  CM: 900,
+  D: 500,
+  CD:400,
+  C:100,
+  XC:90,
+  L: 50,
+  XL:40,
+  X:10,
+  IX:9,
+  V:5, 
+  IV:4,
+  I:1
+}
+let roman = ""
+for(let key in romanToNum){
+  //the key are the roman letters
+  while(num>=romanToNum[key]){
+//it loops through the obj key values (thorugh the [] syntax) the values are Numbers and compares until they finds a key >=
+    roman+= key;
+    //I then add the key string values to an empty string
+    num-= romanToNum[key];
+  //I then alter the num value but subtracting the same key value so that the num that is looped again follows the numeric rules
+  }
+}
+return roman;
+}
+
+console.log(convertToRoman(9));

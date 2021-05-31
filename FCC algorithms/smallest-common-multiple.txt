@@ -1,0 +1,21 @@
+function smallestCommons(arr) {
+  let min = Math.min(...arr)
+  let max = Math.max(...arr)
+for(let i = min + 1; i<max; i++){
+arr.push(i)
+}
+let test = (num) =>{
+ return arr.every(item => num % item == 0)
+}
+let i = 2; 
+do{
+  i++;
+  if(test(i) == true){
+    return i;
+  }
+}while(test(i) === false)
+}
+
+
+smallestCommons([1,3]);
+console.log(smallestCommons([1,3]))

@@ -1,0 +1,23 @@
+function telephoneCheck(str) {
+  let regTest2 = /[(]{0,1}5{3}[)|-]{0,1}5{3}[-]{0,1}\d{4}$/g
+let regTest = /^1(?=([\s(]){1,}\d{3}([)\s-]){1,}\d{3}([\s-]){1}\d{4}$)/g;
+if(regTest.test(str) === true){
+    if(str[1] == " " && str[5] == ")"){
+    return false
+  }
+ return true
+}else if(regTest2.test(str) === true){
+  if(str[0] == "5" && str[4] == ")"){
+    return false
+  }
+  if(str[0] == "(" && str[4] == "-"){
+    return false
+  }
+  return true
+}else {
+  return false
+}
+
+}
+
+console.log(telephoneCheck("-1 (757) 622-7382"));

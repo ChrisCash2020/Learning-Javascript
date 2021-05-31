@@ -1,0 +1,49 @@
+let cashInDrawer = (x, cidArr)=>{
+let drawerEmpty = { ["ONE HUNDRED"]: 0, TWENTY: 0, TEN: 0, FIVE: 0, ONE: 0, QUARTER: 0, DIME: 0, NICKLE: 0, PENNY: 0}
+//made an empty array of the cash I will add on to 
+let drawerValue = { ["ONE HUNDRED"]: 100, TWENTY: 20, TEN: 10, FIVE: 5, ONE: 1, QUARTER: .25, DIME: .1, NICKLE: .05,
+ PENNY:.01};
+//these are the cash values i will add together
+ let drawerMax = { ["ONE HUNDRED"]: cidArr[0], TWENTY: cidArr[1], TEN: cidArr[2], FIVE: cidArr[3], ONE: cidArr[4] , QUARTER: cidArr[5], DIME: cidArr[6], NICKLE: cidArr[7], PENNY: cidArr[8]}
+ //the function accepts an array that houses all the max array values
+ let keys = Object.keys(drawerEmpty)
+ //got the properties of the array
+ for(const key of keys){
+        while(x>= drawerValue[key]){
+          //while the change amount is less than the base cash value I will perform something
+          if(drawerEmpty[key]>= drawerMax[key])delete drawerValue[key];
+          //so if the drawerEmpty array grows bigger than the max array value I will delete the drawerValue key so it won't be satisfy this rule
+          if(drawerValue[key]){
+      drawerEmpty[key]+= drawerValue[key]
+      x-= drawerValue[key]
+      //so I'm increasing the value of the empty array and decreasing the change value as well
+          }
+           }
+   
+     if(drawerEmpty[key] === 0) delete drawerEmpty[key]       
+ }
+ console.log(x)
+  if(x >= .00449 && x<1){
+      drawerEmpty["PENNY"] += 0.01;
+    } 
+return Object.entries(drawerEmpty)
+}
+// console.log(cashInDrawer(20-19.5, [ 0.01, 0, 0, 0, 0, 0, 0, 0, 0 ].reverse() ))
+function checkCashRegister(price, cash, cid) {
+let changeArr;let status;
+let change = cash - price;
+
+let cidArr = cid.map(item => item[1])
+console.log(change)
+let total = 0;
+for(let i = 0; i<5; i++){
+   var result = (cidArr[i] - Math.floor(cidArr[i])) !== 0; 
+   if(result)total += cidArr[i]
+}
+if(total < change) status = "INSUFFICIENT_FUNDS", changeArr = []
+let cidTotal = cidArr.reduce((a,b)=> a + b)
+if(cidTotal  === change) status = "CLOSED", changeArr = cid;
+if(cidTotal > change && total > change || change > 1) status = "OPEN", changeArr = cashInDrawer(change, cidArr.reverse()) ;
+return {status: status, change: changeArr}
+}
+console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]))

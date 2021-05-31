@@ -1,0 +1,14 @@
+function fearNotLetter(str) {
+  let storeArray = ""
+  let alpha = "abcdefghijklmnopqrstuvwxyz";
+  let indexStart = alpha.indexOf(str[0]);
+  let indexEnd = (alpha.indexOf(str[str.length -1]))
+  alpha = alpha.slice(indexStart, indexEnd).split("")
+  console.log(alpha)
+  str = str.split("")
+let filter = alpha.filter(item => !str.includes(item))
+return filter[0]
+}
+
+// fearNotLetter("abce");
+console.log(fearNotLetter("stvwx"))

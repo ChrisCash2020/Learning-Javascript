@@ -1,0 +1,17 @@
+function rot13(str) {
+str = str.split("")
+let convNum = []
+str.forEach(element=> convNum.push(element.charCodeAt()))
+convNum.forEach((element,index)=>{
+  if(element <= 77 && element>= 65){
+    convNum.splice(index, 1, String.fromCharCode(element + 13))
+  }else if(element>77){
+    convNum.splice(index, 1,String.fromCharCode(element - 13))
+  }else{
+    convNum.splice(index,1, String.fromCharCode(element))
+  }
+})
+return convNum.join("")
+}
+
+console.log(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT."));
