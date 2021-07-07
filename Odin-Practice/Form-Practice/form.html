@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        font: 1em sans-serif;
+        max-width: 320px;
+      }
+      input {
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #949494;
+        outline: none !important;
+        border-radius: 5px;
+        font-family: inherit;
+      }
+      .invalid {
+        box-shadow: 0 0 1px 2px orangered;
+      }
+      .valid {
+        box-shadow: 0 0 1px 2px #36cc36;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input
+        type="email"
+        name=""
+        id="email"
+        placeholder="Email"
+        required
+        minlength="8"
+      />
+      <input
+        type="text"
+        name=""
+        id="country"
+        placeholder="Country"
+        required
+        minlength="4"
+      />
+      <input
+        type="text"
+        name=""
+        id="zip-code"
+        placeholder="Zip Code"
+        required
+        maxlength="5"
+      />
+      <input
+        type="password"
+        name=""
+        id="pass"
+        placeholder="Password"
+        required
+        minlength="12"
+      />
+      <input
+        type="password"
+        name=""
+        id="confirm-pass"
+        placeholder="Confirm Password"
+        required
+        minlength="12"
+      />
+    </form>
+  </body>
+  <script src="./form.js"></script>
+</html>
